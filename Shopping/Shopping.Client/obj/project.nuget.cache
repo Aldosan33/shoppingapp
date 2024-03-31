@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VxwCPEQCHR8dOlvz9W8zpPi/ibLlkrfzgIQ268hPV+iJgYa777lCH4I5wWgPe3c184uEPPdcxgYIWMlt0fPUEA==",
+  "dgSpecHash": "jZohoi5qXnlHrnD3WkXdVM56uGL4xbC1q4IffwM4czFTWFjWwMmGpx6nUAdJ4p4pllrUlAxkQwDZ6nQT6P/yTQ==",
   "success": true,
-  "projectFilePath": "D:\\Udemy\\Shopping\\Shopping.Client\\Shopping.Client.csproj",
+  "projectFilePath": "D:\\Udemy\\shoppingapp\\Shopping\\Shopping.Client\\Shopping.Client.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
