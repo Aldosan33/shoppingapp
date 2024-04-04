@@ -1,23 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Shopping.Client.Data;
 using Shopping.Client.Models;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Shopping.Client.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly HttpClient _httpClient;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHttpClientFactory httpClientFactory)
         {
-            _logger = logger;
+            _httpClient = httpClientFactory.CreateClient("ShoppingAPIClient");
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(ProductContext.Products);
+            var response = await _httpClient.GetAsync("api/products");
+            var content = await response.Content.ReadAsStringAsync();
+
+            return View(JsonSerializer.Deserialize<IEnumerable<Product>>(content));
         }
 
         public IActionResult Privacy()
