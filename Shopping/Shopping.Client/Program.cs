@@ -5,10 +5,12 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var configuration = builder.Configuration;
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient("ShoppingAPIClient", client => {
-    client.BaseAddress = new Uri("https://localhost:5000");
+    client.BaseAddress = new Uri(configuration["ShoppingAPIUrl"]);
 });
 
 var app = builder.Build();
