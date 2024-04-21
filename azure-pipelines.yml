@@ -51,7 +51,7 @@ stages:
         displayName: Deploy
         pool:
           vmImage: $(vmImageName)
-        environment: "shoppingappi"
+        environment: "Aldosan33shoppingapp"
         strategy:
           runOnce:
             deploy:
