@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: shoppingappi-srv
+  name: shoppingapi-srv
 spec:
   type: NodePort
   selector:
