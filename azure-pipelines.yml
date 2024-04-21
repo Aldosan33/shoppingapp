@@ -51,7 +51,7 @@ stages:
         displayName: Deploy
         pool:
           vmImage: $(vmImageName)
-        environment: "shoppingappi.default"
+        environment: "shoppingappi"
         strategy:
           runOnce:
             deploy:
