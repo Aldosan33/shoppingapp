@@ -8,7 +8,7 @@ using Shopping.API.Models;
 namespace Shopping.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class ProductsController
     {
         private readonly ProductContext _context;
