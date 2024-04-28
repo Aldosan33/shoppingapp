@@ -17,7 +17,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: ShoppingAdonisACR"
+  dockerRegistryServiceConnection: "ShoppingAdonisACR"
   imageRepository: "shoppingapi"
   containerRegistry: "shoppingadonisacr.azurecr.io"
   dockerfilePath: "**/Dockerfile"
