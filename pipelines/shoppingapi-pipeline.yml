@@ -22,7 +22,7 @@ variables:
   dockerRegistryServiceConnection: "ShoppingAdonisACR"
   imageRepository: "shoppingapi"
   containerRegistry: "shoppingadonisacr.azurecr.io"
-  dockerfilePath: "**/Dockerfile"
+  dockerfilePath: "Shopping/Shopping.API/Dockerfile"
   tag: "$(Build.BuildId)"
   imagePullSecret: "acr-secret"
 
