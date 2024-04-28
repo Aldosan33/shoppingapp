@@ -9,8 +9,6 @@ trigger:
   paths:
     include:
       - Shopping/Shopping.API/*
-      - aks/shoppingapi.yaml
-      - aks/shopping-srv.yaml
 
 resources:
   - repo: self
