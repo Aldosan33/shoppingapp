@@ -16,6 +16,8 @@ resources:
   - repo: self
 
 variables:
+  # Kubernetes service connection established during pipeline creation
+  kubernetesServiceConnection: "AKSAdonis-default"
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: "ShoppingAdonisACR"
   imageRepository: "shoppingapi"
@@ -69,7 +71,7 @@ stages:
                     action: createSecret
                     secretName: $(imagePullSecret)
                     dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-                    kubernetesServiceConnection: "AKSAdonis-default"
+                    kubernetesServiceConnection: $(kubernetesServiceConnection)
 
                 - task: KubernetesManifest@0
                   displayName: Deploy to Kubernetes cluster
@@ -82,4 +84,4 @@ stages:
                       $(imagePullSecret)
                     containers: |
                       $(containerRegistry)/$(imageRepository):$(tag)
-                    kubernetesServiceConnection: "AKSAdonis-default"
+                    kubernetesServiceConnection: $(kubernetesServiceConnection)
